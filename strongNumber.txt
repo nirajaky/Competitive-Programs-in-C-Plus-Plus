@@ -30,5 +30,5 @@ int main()
     else
         cout << "Not a Strong Number" << endl;
 
-    return 0;
+    return 0; 
 }
