@@ -13,7 +13,6 @@ int main()
 
     while(num1!=0) {
         int temp = num1 %10;
-        cout << temp << endl;
         int fact = 1;
 
         for(int i =temp; i>=1; i--) {
