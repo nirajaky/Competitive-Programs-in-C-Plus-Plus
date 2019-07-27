@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int arr[6] = {1,2,3,4,4,6};
+int num = sizeof(arr)/sizeof(int);
+
+void manip(int left, int right, int rise)
+{
+    for(int i = (left-1); i < right; i++)
+    {
+        arr[i] += rise;
+    }
+}
+int main()
+{
+    //cout << num ;
+    manip(1, 5, 5);
+    for(int i = 0; i< num; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
