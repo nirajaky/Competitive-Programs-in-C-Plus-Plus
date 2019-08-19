@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num,ind=0;
+    //cin >> num;
+    int ser[200] = {};
+    for(int i =1; i<=15; i++){
+        for(int j=i; j>0; j--) {
+            ind++;
+            ser[ind] = i;
+            //cout << ser[ind] << endl;
+        }
+        //cout << "i = " << i << endl;
+    }
+    cout << "Ans = " << ser[100];
+    return 0;
+}
