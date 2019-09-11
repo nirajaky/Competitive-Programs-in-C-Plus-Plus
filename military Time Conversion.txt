@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+/*
+ * Complete the timeConversion function below.
+ */
+string timeConversion(string s) {
+    stringstream ss;
+    string hS = s.substr(0,2);
+    string mS = s.substr(3,2);
+    string sS = s.substr(6,2);
+    string D = s.substr(8,2);
+
+    string nS= "";
+    int hI = stoi(hS);
+    int mI = stoi(mS);
+    int sI = stoi(sS);
+    if(D == "AM") {
+        if(hI == 12){
+            ss << "00" << ":" << mS << ":" << sS;
+            nS = ss.str();
+        } else if(hI < 10){
+            ss << "0" <<  hI << ":" << mS << ":" << sS;
+            nS = ss.str();
+        } else {
+            ss <<  hI << ":" << mS << ":" << sS;
+            nS = ss.str();
+        }
+        
+    } else if( D == "PM"){
+        if(hI == 12) {
+            ss << (hI) << ":" << mS << ":" << sS;
+            nS = ss.str();
+        } else {
+            ss << (hI+12) << ":" << mS << ":" << sS;
+            nS = ss.str();
+        }
+        
+    }
+    return nS;
+
+}
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string s;
+    getline(cin, s);
+
+    string result = timeConversion(s);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
